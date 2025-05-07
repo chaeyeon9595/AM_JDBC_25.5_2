@@ -1,1 +1,21 @@
 SHOW TABLES;
+
+DROP TABLES `article`;
+
+CREATE TABLE `article`(
+`id` INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+`regDate` DATETIME NOT NULL,
+`updateDate` DATETIME NOT NULL,
+`title` CHAR(100) NOT NULL,
+`body` TEXT NOT NULL
+
+);
+
+INSERT INTO `article`
+SET `regDate` = NOW(),
+    `updateDate` = NOW(),
+    `title` = '제목1',
+    `body` = '내용1';
+
+SELECT *
+FROM `article`;
