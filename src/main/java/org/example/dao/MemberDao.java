@@ -18,3 +18,5 @@ public class MemberDao {
         return DBUtil.selectRowBooleanValue(conn, sql);
     }
 }
+
+//MemberDao
