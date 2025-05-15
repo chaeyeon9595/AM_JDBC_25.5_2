@@ -12,3 +12,5 @@ public class MemberService {
         return memberDao.isLoginJoin(conn, loginId);
     }
 }
+
+//
