@@ -1,6 +1,6 @@
-package org.example.service;
+package koreaIT.service;
 
-import org.example.dao.MemberDao;
+import koreaIT.dao.MemberDao;
 
 import java.sql.Connection;
 

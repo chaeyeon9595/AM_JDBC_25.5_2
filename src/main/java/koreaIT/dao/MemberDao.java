@@ -1,4 +1,4 @@
-package org.example.dao;
+package koreaIT.dao;
 
 import util.DBUtil;
 import util.SecSql;

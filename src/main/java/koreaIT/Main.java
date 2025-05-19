@@ -1,5 +1,5 @@
 
-package org.example;
+package koreaIT;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package org.example.controller;
+package koreaIT.controller;
 
-import org.example.service.MemberService;
+import koreaIT.service.MemberService;
 import util.DBUtil;
 import util.SecSql;
 
