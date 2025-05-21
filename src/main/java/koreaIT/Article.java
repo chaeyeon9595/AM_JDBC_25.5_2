@@ -10,6 +10,9 @@ public class Article {
     private String title;
     private String body;
 
+    private int memberId;
+    private String name;
+
     public Article(int id, String regDate, String updateDate, String title, String body) {
         this.id = id;
         this.regDate = regDate;
@@ -24,6 +27,9 @@ public class Article {
         this.updateDate = (String) articleMap.get("updateDate");
         this.title = (String) articleMap.get("title");
         this.body = (String) articleMap.get("body");
+
+        this.memberId = (int) articleMap.get("memberId");
+        this.name = (String) articleMap.get("name");
     }
 
 
@@ -36,6 +42,22 @@ public class Article {
                 ", title='" + title + '\'' +
                 ", body='" + body + '\'' +
                 '}';
+    }
+
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRegDate() {
