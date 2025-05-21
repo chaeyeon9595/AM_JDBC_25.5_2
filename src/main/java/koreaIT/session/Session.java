@@ -1,7 +1,7 @@
 
 package koreaIT.session;
 
-import koreaIT.Member;
+import koreaIT.dto.Member;
 
 public class Session {
     public Member loginedMember;

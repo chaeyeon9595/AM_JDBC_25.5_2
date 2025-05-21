@@ -1,7 +1,7 @@
 
 package koreaIT.controller;
 
-import koreaIT.Article;
+import koreaIT.dto.Article;
 import koreaIT.container.Container;
 import koreaIT.service.ArticleService;
 
@@ -19,6 +19,12 @@ public class ArticleController {
     }
 
     public void doDelete(String cmd) {
+
+        if (!Container.session.isLogined()) {
+            System.out.println("로그인 후 이용하세요.");
+            return;
+        }
+
         int id = -1;
 
         //parsing
@@ -37,6 +43,14 @@ public class ArticleController {
             return;
         }
         // 글 유무체크 끝
+
+// article의 id로 가져온 게시글 데이터 중 memberId vs. Container.session.loginedMemberId
+        Article article = new Article(articleMap);
+
+        if (!(article.getId() == Container.session.loginedMemberId)) {
+            System.out.println("삭제권한이 없습니다.");
+            return;
+        }
 
         articleService.doDelete(id);
 
@@ -79,6 +93,12 @@ public class ArticleController {
     }
 
     public void doModify(String cmd) {
+
+        if (!Container.session.isLogined()) {
+            System.out.println("로그인 후 이용하세요.");
+            return;
+        }
+
         int id = 0;
 
         //parsing
@@ -97,6 +117,14 @@ public class ArticleController {
         }
         // 글 유무체크 끝
 
+        // article의 id로 가져온 게시글 데이터 중 memberId vs. Container.session.loginedMemberId
+        Article article = new Article(articleMap);
+
+        if (!(article.getId() == Container.session.loginedMemberId)) {
+            System.out.println("수정권한이 없습니다.");
+            return;
+        }
+
         System.out.println("== 글 수정 ==");
         System.out.print("새 제목 : ");
         String newTitle = sc.nextLine().trim();
@@ -109,6 +137,11 @@ public class ArticleController {
     }
 
     public void doWrite() {
+
+        if (!Container.session.isLogined()) {
+            System.out.println("로그인 후 이용하세요.");
+            return;
+        }
 
         System.out.print("제목 : ");
         String title = sc.nextLine().trim();
