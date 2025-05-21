@@ -2,6 +2,7 @@
 package koreaIT.dao;
 
 import koreaIT.container.Container;
+import koreaIT.session.Session;
 import util.DBUtil;
 import util.SecSql;
 
@@ -72,6 +73,7 @@ public class ArticleDao {
         sql.append("INSERT INTO `article`");
         sql.append("SET `regDate` = NOW(),");
         sql.append("`updateDate` = NOW(),");
+        sql.append("`memberId` = ?,", Container.session.loginedMemberId);
         sql.append("`title` = ?,", title);
         sql.append("`body` = ?;", body);
 
